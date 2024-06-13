@@ -1,61 +1,53 @@
----
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
+<div class="m-auto text-center py-10">
+  <label> Valor - Cuota del equipo:</label><br />
+  <input class="text-black" type="text" id="txtNum1" name="txtNum1" /><br /><br
+  />
 
-const { href, title, body } = Astro.props;
----
+  <label>Valor - Cuota de Fondo:</label><br />
+  <input class="text-black" type="text" id="txtNum2" name="txtNum2" /><br /><br
+  />
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+  <label>Valor - Pendiente:</label><br />
+  <input class="text-black" type="text" id="txtNum3" name="txtNum3" /><br /><br
+  />
+
+  <label>Valor - Distancia:</label><br />
+  <input class="text-black" type="text" id="txtNum4" name="txtNum4" /><br /><br
+  />
+
+  <label>El resultado es:</label><br />
+  <input
+    class="text-black"
+    type="text"
+    id="txtResult"
+    name="txtResult"
+    disabled
+  /><br /><br />
+
+  <button class="tgt rounded-xl bg-white text-black py-2 px-8">Add</button>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll("button.tgt");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let num1 = Number(
+        (document.getElementById("txtNum1") as HTMLInputElement).value
+      );
+      let num2 = Number(
+        (document.getElementById("txtNum2") as HTMLInputElement).value
+      );
+      let num3 = Number(
+        (document.getElementById("txtNum3") as HTMLInputElement).value
+      );
+      let num4 = Number(
+        (document.getElementById("txtNum4") as HTMLInputElement).value
+      );
+
+      const sum =
+        Math.round((num1 - (num2 - (num3 / 1000) * 1.2) + num4) * 100) / 100;
+      (document.getElementById("txtResult") as HTMLInputElement).value =
+        String(sum);
+    });
+  });
+</script>
