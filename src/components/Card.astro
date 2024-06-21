@@ -1,47 +1,61 @@
-<div class="m-auto text-center py-10">
-  <button class="tgt rounded-xl bg-white text-black py-2 px-8">Sumar</button>
-  <br /><br />
+<div
+  class="m-auto text-center py-10 flex flex-col items-center justify-center gap-y-8"
+>
+  <button
+    class="tgt rounded-xl bg-white text-black py-2 px-8 font-bold border border-white"
+    >Calcular</button
+  >
 
-  <label> Valor - Cuota del equipo:</label><br />
-  <input
-    class="text-black rounded-s py-1 px-2"
-    type="text"
-    id="txtNum1"
-    name="txtNum1"
-  /><br /><br />
+  <div class="flex flex-col gap-y-1 items-start">
+    <label class="font-semibold"> Valor - Cuota del equipo:</label>
+    <input
+      class="text-black rounded-s py-1 px-2"
+      type="text"
+      id="txtNum1"
+      name="txtNum1"
+    />
+  </div>
 
-  <label>Valor - Cuota de Fondo:</label><br />
-  <input
-    class="text-black rounded-s py-1 px-2"
-    type="text"
-    id="txtNum2"
-    name="txtNum2"
-  /><br /><br />
+  <div class="flex flex-col gap-y-1 items-start">
+    <label class="font-semibold">Valor - Cuota de Fondo:</label>
+    <input
+      class="text-black rounded-s py-1 px-2"
+      type="text"
+      id="txtNum2"
+      name="txtNum2"
+    />
+  </div>
 
-  <label>Valor - Pendiente:</label><br />
-  <input
-    class="text-black rounded-s py-1 px-2"
-    type="text"
-    id="txtNum3"
-    name="txtNum3"
-  /><br /><br />
+  <div class="flex flex-col gap-y-1 items-start">
+    <label class="font-semibold">Valor - Pendiente:</label>
+    <input
+      class="text-black rounded-s py-1 px-2"
+      type="text"
+      id="txtNum3"
+      name="txtNum3"
+    />
+  </div>
 
-  <label>Valor - Distancia:</label><br />
-  <input
-    class="text-black rounded-s py-1 px-2"
-    type="text"
-    id="txtNum4"
-    name="txtNum4"
-  /><br /><br />
+  <div class="flex flex-col gap-y-1 items-start">
+    <label class="font-semibold">Valor - Distancia:</label>
+    <input
+      class="text-black rounded-s py-1 px-2"
+      type="text"
+      id="txtNum4"
+      name="txtNum4"
+    />
+  </div>
 
-  <label>El resultado es:</label><br />
-  <input
-    class="text-white rounded-s py-1 px-2"
-    type="text"
-    id="txtResult"
-    name="txtResult"
-    disabled
-  /><br /><br />
+  <div class="flex flex-col gap-y-1 items-start">
+    <label class="font-semibold">El resultado es:</label>
+    <input
+      class="text-white rounded-lg py-2 px-1 text-center font-bold text-xl bg-gray-700"
+      type="text"
+      id="txtResult"
+      name="txtResult"
+      disabled
+    />
+  </div>
 </div>
 
 <script>
